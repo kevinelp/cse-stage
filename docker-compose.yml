@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  web:
+    container_name: cse-apache
+    build: "."
+    ports:
+      - "8080:80"
+    volumes:
+#      - "${PWD}/conf:/usr/local/apache2/conf"
+      - "${PWD}/conf:/etc/apache2"
+#      - "${PWD}/logs:/usr/local/apache2/logs"
+      - "${PWD}/logs:/var/log/apache2"
+      - "${PWD}/web:/web"
+

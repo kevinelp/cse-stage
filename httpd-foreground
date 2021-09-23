@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+
+# Apache gets grumpy about PID files pre-existing
+#rm -f /usr/local/apache2/logs/httpd.pid
+
+. /etc/apache2/envvars
+#Mutex file:${APACHE_LOCK_DIR} default
+#APACHE_RUN_DIR=
+#APACHE_PID_FILE=
+#APACHE_RUN_USER=www-data
+#APACHE_RUN_GROUP=www-data
+#APACHE_LOG_DIR=/var/log/apache2
+
+
+exec /usr/sbin/apache2 -DFOREGROUND "$@"
