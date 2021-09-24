@@ -1,14 +1,18 @@
-version: "3.3"
 services:
   web:
     container_name: cse-apache
-    build: "."
+    build:
+      context: "."
+      args:
+      - TARGET_USER=cs3231
+      - TARGET_GROUP=cs3231
+      - HOST_UID=1000
+      - HOST_GID=1000
     ports:
       - "8080:80"
     volumes:
-#      - "${PWD}/conf:/usr/local/apache2/conf"
       - "${PWD}/conf:/etc/apache2"
-#      - "${PWD}/logs:/usr/local/apache2/logs"
       - "${PWD}/logs:/var/log/apache2"
-      - "${PWD}/web:/web"
+      - "${PWD}/home:/home"
+      - "/proc/sys/fs/binfmt_misc:/binfmt_misc"
 
