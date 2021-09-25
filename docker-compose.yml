@@ -14,5 +14,5 @@ services:
       - "${PWD}/conf:/etc/apache2"
       - "${PWD}/logs:/var/log/apache2"
       - "${PWD}/home:/home"
-      - "/proc/sys/fs/binfmt_misc:/binfmt_misc"
+      - "/proc/sys/fs/binfmt_misc:/binfmt_misc:ro"
 
