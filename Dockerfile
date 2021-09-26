@@ -7,6 +7,7 @@ RUN apt update && apt install -y \
     apache2 \
     php-cgi \
     php-xml \
+    php-sqlite3 \
     apache2-suexec-pristine \
     vim
 RUN mkdir -p /var/run/apache2
