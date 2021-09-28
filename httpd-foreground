@@ -17,8 +17,9 @@ set -e
 
 # A sanity check that PHP has been registered the kernel
 if [ ! -f /binfmt_misc/PHP ]; then
-    echo 'PHP might not be registered with binfmt_misc'
-    echo ':PHP:E::php::/usr/bin/php-cgi:  > /proc/sys/fs/binfmt_misc/register'
+    echo 'PHP might not be registered with binfmt_misc.'
+    echo 'You may need to run the following as root.'
+    echo "echo ':PHP:E::php::/usr/bin/php-cgi:'  > /proc/sys/fs/binfmt_misc/register"
     exit 1
 fi
 
