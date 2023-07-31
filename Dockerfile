@@ -9,6 +9,7 @@ RUN apt update && apt install -y \
     php-xml \
     php-sqlite3 \
     apache2-suexec-pristine \
+    python3 \
     vim
 RUN mkdir -p /var/run/apache2
 RUN addgroup --gid=${HOST_GID} ${TARGET_GROUP}
